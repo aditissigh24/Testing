@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+.good-speed {
+  color: green;
+}
+
+.bad-speed {
+  color: red;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
