@@ -48,21 +48,23 @@ function GeminiChatbot() {
   };
 
   return (
-    <div className="chatbot">
-      <div className="chat-window">
+    <div className="whatsapp-chatbot">
+      <div className="whatsapp-chat-window">
         {messages.map((m, i) => (
-          <div key={i} className={m.role}>
-            {m.content}
+          <div key={i} className={`message ${m.role}`}> 
+            <span className="message-text">{m.content}</span>
           </div>
         ))}
       </div>
-      <div className="chat-input">
+      <div className="whatsapp-chat-input">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type a message"
         />
-        <button onClick={sendMessage}>Send</button>
+        <button onClick={sendMessage} aria-label="Send">
+          ➤
+        </button>
       </div>
     </div>
   );
