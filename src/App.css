@@ -40,6 +40,21 @@
   margin: 20px 0;
 }
 
+.stock-table {
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.stock-table th,
+.stock-table td {
+  border: 1px solid #ffffff;
+  padding: 8px 12px;
+}
+
+.stock-table th {
+  background-color: #444;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
