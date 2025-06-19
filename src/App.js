@@ -32,10 +32,6 @@ function App() {
 
   useEffect(() => {
     const measureSpeed = async () => {
-      if (navigator.connection && navigator.connection.downlink) {
-        setSpeed(navigator.connection.downlink);
-        return;
-      }
       try {
         const image =
           "https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg";
@@ -54,10 +50,24 @@ function App() {
       }
     };
 
-    measureSpeed();
-    // Run the speed check very frequently
-    const id = setInterval(measureSpeed, 10);
-    return () => clearInterval(id);
+    let intervalId;
+
+    if (navigator.connection && navigator.connection.downlink) {
+      const updateConnectionSpeed = () => {
+        setSpeed(navigator.connection.downlink);
+      };
+
+      updateConnectionSpeed();
+      navigator.connection.addEventListener("change", updateConnectionSpeed);
+
+      return () => {
+        navigator.connection.removeEventListener("change", updateConnectionSpeed);
+      };
+    } else {
+      measureSpeed();
+      intervalId = setInterval(measureSpeed, 5000);
+      return () => clearInterval(intervalId);
+    }
   }, []);
 
   const speedClass = speed !== null && speed >= 5 ? "good-speed" : "bad-speed";

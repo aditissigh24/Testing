@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It includes a small demo that continuously measures the user's network speed in
+real time. If the Network Information API is available, the application listens
+for connection changes to update the displayed speed automatically. Otherwise it
+periodically downloads a test image every few seconds and recalculates the
+speed.
+
 ## Available Scripts
 
 In the project directory, you can run:
