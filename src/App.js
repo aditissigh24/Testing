@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import StockTable from './StockTable';
+import ComputerModel from './ComputerModel';
 
 function SpeedDial({ speed, max = 50 }) {
   const clamped = Math.min(speed || 0, max);
@@ -89,8 +91,10 @@ function App() {
         >
           Learn React
         </a>
+        <ComputerModel />
         <SpeedDial speed={speed} />
         <p className={speedClass}>Internet speed: {speedText}</p>
+        <StockTable />
       </header>
     </div>
   );
