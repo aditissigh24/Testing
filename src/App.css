@@ -48,3 +48,36 @@
     transform: rotate(360deg);
   }
 }
+.chatbot {
+  margin-top: 1rem;
+  border: 1px solid #444;
+  padding: 1rem;
+  width: 300px;
+}
+.chat-window {
+  height: 200px;
+  overflow-y: auto;
+  background: #222;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.chat-window .assistant {
+  color: #0f0;
+  margin-bottom: 0.5rem;
+}
+.chat-window .user {
+  color: #0af;
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+.chat-input {
+  display: flex;
+}
+.chat-input input {
+  flex: 1;
+  padding: 0.25rem;
+}
+.chat-input button {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}

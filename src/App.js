@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import GeminiChatbot from './GeminiChatbot';
 
 function SpeedDial({ speed, max = 50 }) {
   const clamped = Math.min(speed || 0, max);
@@ -91,6 +92,7 @@ function App() {
         </a>
         <SpeedDial speed={speed} />
         <p className={speedClass}>Internet speed: {speedText}</p>
+        <GeminiChatbot />
       </header>
     </div>
   );
