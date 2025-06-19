@@ -3,6 +3,10 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import GeminiChatbot from './GeminiChatbot';
 
+import StockTable from './StockTable';
+import ComputerModel from './ComputerModel';
+
+
 function SpeedDial({ speed, max = 50 }) {
   const clamped = Math.min(speed || 0, max);
   const angle = (clamped / max) * 180 - 90; // -90deg is far left
@@ -90,9 +94,14 @@ function App() {
         >
           Learn React
         </a>
+        <ComputerModel />
         <SpeedDial speed={speed} />
         <p className={speedClass}>Internet speed: {speedText}</p>
+
         <GeminiChatbot />
+
+        <StockTable />
+
       </header>
     </div>
   );
