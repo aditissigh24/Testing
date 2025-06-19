@@ -74,3 +74,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Gemini Chatbot
+
+The home screen now includes a simple chatbot that uses the Gemini API. To enable
+it, provide your Gemini API key in an environment variable named
+`REACT_APP_GEMINI_API_KEY` when starting the app.
