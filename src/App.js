@@ -55,7 +55,8 @@ function App() {
     };
 
     measureSpeed();
-    const id = setInterval(measureSpeed, 5000);
+    // Run the speed check very frequently
+    const id = setInterval(measureSpeed, 10);
     return () => clearInterval(id);
   }, []);
 
