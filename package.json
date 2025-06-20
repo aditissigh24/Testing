@@ -14,7 +14,7 @@
     "three": "^0.155.0",
     "antd": "^5.13.6",
     "@tanstack/react-query": "^5.24.3",
-    "@ant-design/plots": "^1.5.17"
+    "@ant-design/plots": "^1.5.16"
   },
   "scripts": {
     "start": "react-scripts start",
