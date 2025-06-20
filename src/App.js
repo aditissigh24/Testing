@@ -1,6 +1,6 @@
 import './App.css';
 import { Form, Input, Button, Select, message } from 'antd';
-import { useCreateLead } from '../_actions/leads';
+import { useCreateLead } from './_actions/leads';
 
 const { TextArea } = Input;
 
