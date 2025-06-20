@@ -1,5 +1,7 @@
-import { Card, Row, Col, Statistic } from 'antd';
+import { Card, Row, Col, Statistic, Typography } from 'antd';
 import { useGetLeads } from '../_actions/leads';
+
+const { Title } = Typography;
 
 const Dashboard = () => {
   const { data = [], isLoading } = useGetLeads();
@@ -11,6 +13,9 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Title level={2} style={{ textAlign: 'center', marginBottom: 24 }}>
+        Dashboard
+      </Title>
       <Row gutter={16} style={{ marginBottom: 24 }}>
         <Col xs={12} md={6}>
           <Card>
