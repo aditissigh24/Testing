@@ -124,6 +124,7 @@ const LeadsTable = () => {
       dataSource={data}
       pagination={false}
       style={{ marginTop: 20 }}
+      scroll={{ x: 800 }}
     />
   );
 };

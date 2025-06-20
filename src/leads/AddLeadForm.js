@@ -25,7 +25,7 @@ const AddLeadForm = () => {
       style={{ maxWidth: 800, margin: '0 auto', padding: 24 }}
     >
       <Row gutter={24}>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Full Name"
             name="full_name"
@@ -34,7 +34,7 @@ const AddLeadForm = () => {
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Email"
             name="email"
@@ -45,7 +45,7 @@ const AddLeadForm = () => {
         </Col>
       </Row>
       <Row gutter={24}>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Contact Number"
             name="contact_no"
@@ -54,14 +54,14 @@ const AddLeadForm = () => {
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item label="Company Name" name="company_name">
             <Input />
           </Form.Item>
         </Col>
       </Row>
       <Row gutter={24}>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Email To"
             name="email_to"
@@ -70,7 +70,7 @@ const AddLeadForm = () => {
             <Input />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <Form.Item
             label="Status"
             name="status"

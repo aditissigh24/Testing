@@ -34,7 +34,7 @@ function App() {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider collapsible>
+      <Sider collapsible breakpoint="md" collapsedWidth={0}>
         <div style={{ textAlign: 'center', padding: '16px 0' }}>
           <img
             src="https://api.qureal.com/assets/b90b0f1f-ac58-4462-beaf-8443326473a9"
