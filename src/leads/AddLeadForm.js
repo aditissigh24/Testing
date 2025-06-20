@@ -22,9 +22,9 @@ const AddLeadForm = () => {
       form={form}
       layout="vertical"
       onFinish={onFinish}
-      style={{ maxWidth: 800, margin: '0 auto' }}
+      style={{ maxWidth: 800, margin: '0 auto', padding: 24 }}
     >
-      <Row gutter={16}>
+      <Row gutter={24}>
         <Col span={12}>
           <Form.Item
             label="Full Name"
@@ -44,7 +44,7 @@ const AddLeadForm = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Row gutter={16}>
+      <Row gutter={24}>
         <Col span={12}>
           <Form.Item
             label="Contact Number"
@@ -60,7 +60,7 @@ const AddLeadForm = () => {
           </Form.Item>
         </Col>
       </Row>
-      <Row gutter={16}>
+      <Row gutter={24}>
         <Col span={12}>
           <Form.Item
             label="Email To"
@@ -90,6 +90,13 @@ const AddLeadForm = () => {
         <TextArea rows={4} />
       </Form.Item>
       <Form.Item style={{ textAlign: 'right' }}>
+        <Button
+          style={{ marginRight: 8 }}
+          onClick={() => form.resetFields()}
+          disabled={createLead.isPending}
+        >
+          Clear
+        </Button>
         <Button type="primary" htmlType="submit" loading={createLead.isPending}>
           Add Lead
         </Button>
