@@ -13,7 +13,8 @@
     "web-vitals": "^2.1.4",
     "three": "^0.155.0",
     "antd": "^5.13.6",
-    "@tanstack/react-query": "^5.24.3"
+    "@tanstack/react-query": "^5.24.3",
+    "@ant-design/plots": "^1.5.17"
   },
   "scripts": {
     "start": "react-scripts start",
