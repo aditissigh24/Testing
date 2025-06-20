@@ -1,4 +1,5 @@
 import { Table, Tag, Button, message } from 'antd';
+import { MessageOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import { useGetLeads, useUpdateLead } from '../_actions/leads';
 
 const statusColors = {
@@ -63,9 +64,28 @@ const LeadsTable = () => {
     {
       title: 'Actions',
       key: 'actions',
-      render: (_, record) => {
-        if (record.status === 'active') {
-          return (
+      render: (_, record) => (
+        <>
+          <Button
+            size="small"
+            icon={<MessageOutlined />}
+            href={`https://wa.me/${record.contact_no}`}
+            target="_blank"
+            style={{ marginRight: 8 }}
+          />
+          <Button
+            size="small"
+            icon={<MailOutlined />}
+            href={`mailto:${record.email}`}
+            style={{ marginRight: 8 }}
+          />
+          <Button
+            size="small"
+            icon={<PhoneOutlined />}
+            href={`tel:${record.contact_no}`}
+            style={{ marginRight: 8 }}
+          />
+          {record.status === 'active' && (
             <>
               <Button
                 size="small"
@@ -82,20 +102,17 @@ const LeadsTable = () => {
                 Close
               </Button>
             </>
-          );
-        }
-        if (record.status === 'closed' || record.status === 'on_hold') {
-          return (
+          )}
+          {(record.status === 'closed' || record.status === 'on_hold') && (
             <Button
               size="small"
               onClick={() => handleStatusChange(record.id, 'active')}
             >
               Open
             </Button>
-          );
-        }
-        return null;
-      },
+          )}
+        </>
+      ),
     },
   ];
 

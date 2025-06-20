@@ -35,6 +35,13 @@ function App() {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible>
+        <div style={{ textAlign: 'center', padding: '16px 0' }}>
+          <img
+            src="https://api.qureal.com/assets/b90b0f1f-ac58-4462-beaf-8443326473a9"
+            alt="logo"
+            style={{ maxWidth: '80%', height: 40, objectFit: 'contain' }}
+          />
+        </div>
         <Menu
           theme="dark"
           mode="inline"
