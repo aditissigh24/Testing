@@ -1,6 +1,8 @@
-import { Table, Tag, Button, message } from 'antd';
+import { Table, Tag, Button, message, Typography } from 'antd';
 import { MessageOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import { useGetLeads, useUpdateLead } from '../_actions/leads';
+
+const { Title } = Typography;
 
 const statusColors = {
   active: 'green',
@@ -138,15 +140,20 @@ const LeadsTable = () => {
   ];
 
   return (
-    <Table
-      rowKey="id"
-      loading={isLoading}
-      columns={columns}
-      dataSource={data}
-      pagination={false}
-      style={{ marginTop: 20 }}
-      scroll={{ x: 800 }}
-    />
+    <>
+      <Title level={2} style={{ textAlign: 'center', marginBottom: 24 }}>
+        All Leads
+      </Title>
+      <Table
+        rowKey="id"
+        loading={isLoading}
+        columns={columns}
+        dataSource={data}
+        pagination={false}
+        style={{ marginTop: 20 }}
+        scroll={{ x: 800 }}
+      />
+    </>
   );
 };
 

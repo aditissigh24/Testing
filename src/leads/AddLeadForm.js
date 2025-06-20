@@ -1,7 +1,8 @@
-import { Form, Input, Button, Select, message, Row, Col } from 'antd';
+import { Form, Input, Button, Select, message, Row, Col, Typography } from 'antd';
 import { useCreateLead } from '../_actions/leads';
 
 const { TextArea } = Input;
+const { Title } = Typography;
 
 const AddLeadForm = () => {
   const [form] = Form.useForm();
@@ -18,12 +19,16 @@ const AddLeadForm = () => {
   };
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      onFinish={onFinish}
-      style={{ maxWidth: 800, margin: '0 auto', padding: 24 }}
-    >
+    <>
+      <Title level={2} style={{ textAlign: 'center', marginBottom: 24 }}>
+        Add New Lead
+      </Title>
+      <Form
+        form={form}
+        layout="vertical"
+        onFinish={onFinish}
+        style={{ maxWidth: 800, margin: '0 auto', padding: 24 }}
+      >
       <Row gutter={24}>
         <Col xs={24} md={12}>
           <Form.Item
@@ -102,6 +107,7 @@ const AddLeadForm = () => {
         </Button>
       </Form.Item>
     </Form>
+    </>
   );
 };
 
