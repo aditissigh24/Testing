@@ -1,6 +1,6 @@
 import './App.css';
 import { Form, Input, Button, Select, message } from 'antd';
-import { useCreateLead } from '../_actions/leads';
+import { useCreateLead } from './_actions/leads';
 
 const { TextArea } = Input;
 
@@ -75,7 +75,7 @@ function App() {
                     />
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" loading={createLead.isLoading}>
+                    <Button type="primary" htmlType="submit" loading={createLead.isPending}>
                         Add Lead
                     </Button>
                 </Form.Item>
