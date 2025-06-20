@@ -4,8 +4,11 @@ import { createItem, getItems, updateItem } from './api';
 const COLLECTION = 'qcrm_leads';
 
 export const useCreateLead = () => {
+  const queryClient = useQueryClient();
   return useMutation({
     mutationFn: (data) => createItem(COLLECTION, data),
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: [COLLECTION] }),
   });
 };
 
