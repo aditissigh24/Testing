@@ -71,26 +71,46 @@ const LeadsTable = () => {
             icon={<MessageOutlined />}
             href={`https://wa.me/${record.contact_no}`}
             target="_blank"
-            style={{ marginRight: 8 }}
+            style={{
+              marginRight: 8,
+              backgroundColor: '#25D366',
+              borderColor: '#25D366',
+              color: '#fff',
+            }}
           />
           <Button
             size="small"
             icon={<MailOutlined />}
             href={`mailto:${record.email}`}
-            style={{ marginRight: 8 }}
+            style={{
+              marginRight: 8,
+              backgroundColor: '#1677ff',
+              borderColor: '#1677ff',
+              color: '#fff',
+            }}
           />
           <Button
             size="small"
             icon={<PhoneOutlined />}
             href={`tel:${record.contact_no}`}
-            style={{ marginRight: 8 }}
+            style={{
+              marginRight: 8,
+              backgroundColor: '#00b359',
+              borderColor: '#00b359',
+              color: '#fff',
+            }}
           />
           {record.status === 'active' && (
             <>
               <Button
                 size="small"
                 onClick={() => handleStatusChange(record.id, 'on_hold')}
-                style={{ marginRight: 8 }}
+                style={{
+                  marginRight: 8,
+                  backgroundColor: '#faad14',
+                  borderColor: '#faad14',
+                  color: '#fff',
+                }}
               >
                 Hold
               </Button>
@@ -106,6 +126,7 @@ const LeadsTable = () => {
           {(record.status === 'closed' || record.status === 'on_hold') && (
             <Button
               size="small"
+              type="primary"
               onClick={() => handleStatusChange(record.id, 'active')}
             >
               Open
