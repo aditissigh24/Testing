@@ -1,5 +1,5 @@
-import { Table, Tag } from 'antd';
-import { useGetLeads } from '../_actions/leads';
+import { Table, Tag, Button, message } from 'antd';
+import { useGetLeads, useUpdateLead } from '../_actions/leads';
 
 const statusColors = {
   active: 'green',
@@ -9,6 +9,17 @@ const statusColors = {
 
 const LeadsTable = () => {
   const { data = [], isLoading } = useGetLeads();
+  const updateLead = useUpdateLead();
+
+  const handleStatusChange = (id, status) => {
+    updateLead.mutate(
+      { id, status },
+      {
+        onSuccess: () => message.success('Status updated'),
+        onError: () => message.error('Failed to update status'),
+      }
+    );
+  };
 
   const columns = [
     {
@@ -48,6 +59,43 @@ const LeadsTable = () => {
       render: (status) => (
         <Tag color={statusColors[status] || 'default'}>{status}</Tag>
       ),
+    },
+    {
+      title: 'Actions',
+      key: 'actions',
+      render: (_, record) => {
+        if (record.status === 'active') {
+          return (
+            <>
+              <Button
+                size="small"
+                onClick={() => handleStatusChange(record.id, 'on_hold')}
+                style={{ marginRight: 8 }}
+              >
+                Hold
+              </Button>
+              <Button
+                size="small"
+                danger
+                onClick={() => handleStatusChange(record.id, 'closed')}
+              >
+                Close
+              </Button>
+            </>
+          );
+        }
+        if (record.status === 'closed' || record.status === 'on_hold') {
+          return (
+            <Button
+              size="small"
+              onClick={() => handleStatusChange(record.id, 'active')}
+            >
+              Open
+            </Button>
+          );
+        }
+        return null;
+      },
     },
   ];
 
